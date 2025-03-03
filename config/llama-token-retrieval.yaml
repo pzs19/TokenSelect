@@ -1,0 +1,15 @@
+model:
+  type: token-retrieval
+  path: meta-llama/Meta-Llama-3-8B-Instruct
+  rope_base: 500000
+  rope_scale: 1
+  n_init: 128
+  n_local: 512
+  top_k: 2048
+  max_n_tokens: 1048576
+
+max_len: 1048576
+chunk_size: 8192
+conv_type: llama-3-inst
+truncation: suffix
+dtype: bfloat16

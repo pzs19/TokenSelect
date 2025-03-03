@@ -1,0 +1,11 @@
+{
+  "passkey": 5,
+  "number_string": 5,
+  "kv_retrieval": 5,
+  "longbook_qa_eng": 6,
+  "longbook_choice_eng": 9,
+  "longbook_sum_eng": 12,
+  "math_find": 128,
+  "code_debug": 9,
+  "longdialogue_qa_eng": 0
+}
