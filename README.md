@@ -24,8 +24,12 @@ reducing the selection frequency while ensuring its effectiveness.
 </div>
 
 <!-- ![Comparison](comparison.gif) -->
-Performance Comparison on a single A100-80G. Please refer to our [paper](https://arxiv.org/abs/2411.02886) for more details.
+Performance Comparison on a single A100-80G. The prompt is:
 
+```python
+prompt = "The grass is green. The sky is blue. The sun is yellow. Here we go. There and back again. " * 5000 + f"The pass key is 71432. Remember it. 71432 is the pass key. " + "The grass is green. The sky is blue. The sun is yellow. Here we go. There and back again. " * 5000 + "What is the pass key?"
+```
+Feel free to replicate this using the [scripts/serve.sh](scripts/serve.sh) and [benchmark/send_request.py](benchmark/send_request.py) provided. Please refer to our [paper](https://arxiv.org/abs/2411.02886) for more evaluation results.
 
 <video src="https://private-user-images.githubusercontent.com/64088736/418362966-80237a8e-25ab-49a2-b44f-a17a6be88908.mov?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDA5MzM3NDQsIm5iZiI6MTc0MDkzMzQ0NCwicGF0aCI6Ii82NDA4ODczNi80MTgzNjI5NjYtODAyMzdhOGUtMjVhYi00OWEyLWI0NGYtYTE3YTZiZTg4OTA4Lm1vdj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzAyVDE2MzcyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg4YWZmYmNhZDU3OGE4ODEyZjg0MGIwOThiMDcwNzUwOTY3NzE0ZjVjMjdmODIyZWRjNDQyZWUxYjU4NDI1ZDcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Uzh5fvyxkb51Q7VCUMA_TGeONZT8B6F42OmBTXtSVCI" data-canonical-src="https://private-user-images.githubusercontent.com/64088736/418362966-80237a8e-25ab-49a2-b44f-a17a6be88908.mov?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDA5MzM3NDQsIm5iZiI6MTc0MDkzMzQ0NCwicGF0aCI6Ii82NDA4ODczNi80MTgzNjI5NjYtODAyMzdhOGUtMjVhYi00OWEyLWI0NGYtYTE3YTZiZTg4OTA4Lm1vdj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzAyVDE2MzcyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg4YWZmYmNhZDU3OGE4ODEyZjg0MGIwOThiMDcwNzUwOTY3NzE0ZjVjMjdmODIyZWRjNDQyZWUxYjU4NDI1ZDcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Uzh5fvyxkb51Q7VCUMA_TGeONZT8B6F42OmBTXtSVCI" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px">
 </video>
@@ -36,6 +40,7 @@ TokenSelect is built on top of [SGLang](https://github.com/sgl-project/sglang) a
 
 ```
 pip install sglang==0.2.13
+pip install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu121 
 pip install flashinfer-python -i https://flashinfer.ai/whl/cu121/torch2.4
 ```
 
